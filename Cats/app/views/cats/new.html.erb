@@ -1,0 +1,7 @@
+
+<form action='<%= cats_url %>' method="POST">
+  <%= render "cat_editor", cat: @cat %>
+</form>
+
+<!-- render :new from Controller#new executes the above code.
+Purpose of the above code is to then call the Controller#create method -->

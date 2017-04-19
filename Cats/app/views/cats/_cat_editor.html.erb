@@ -1,0 +1,36 @@
+<!-- <form action='cat_url(cat)' method="POST">  #pass cat to cat_url because this partial view uses the variable cat, not @cat-->
+<label for='catName'>Enter Cat Name:</label>
+<input id='catName' name='cat[name]' type='text' value='<%= cat.name %>'/>
+<br/>
+
+<label for='catSex'>Choose a Gender:</label>
+<div id='catSex'>
+  <input type='radio' name='cat[sex]' value='M'
+  <%= 'checked' if cat.sex == 'M'%>   >Boy<br/>  <!-- Rails knows 'name' is a keyword that holds the param value at cat[sex], which in this case is 'M'-->
+  <input type='radio' name='cat[sex]' value='F'
+  <%= 'checked' if cat.sex == 'F' %> >Girl<br/>
+</div>
+<br/>
+
+<label for='catColor'>Choose a Color:</label>
+<select id='catColor' name='cat[color]'>
+  <option disabled <%= 'selected' unless cat.color %>>Select a Color</option>
+  <% Cat::COLORS.each do |color| %>
+    <option value='<%= color %>'
+      <%= 'selected' if cat.color == color %> >
+      <%=color%>
+    </option>
+  <% end %>
+</select>
+<br/>
+
+<label for='catBirthdate'>Select Cat's Birthdate:</label>
+<input id='catBirthdate' type='date' name='cat[birth_date]'
+value='<%= cat.birth_date %>'>
+<br/>
+
+<label for='catDescription'>Description:</label>
+<textarea id='catDescription' name='cat[description]'><%= cat.description %></textarea>
+
+<button type="submit">record cat</button>
+<!-- type 'submit' registers user action -->

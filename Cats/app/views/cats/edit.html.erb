@@ -1,0 +1,21 @@
+
+<form action='<%= cat_url(@cat) %>' method="POST"> <!-- <form action='/cats/5' method="POST"> -->
+  <input type='hidden' name='_method' value='PATCH'>
+  <%= render "cat_editor", cat: @cat %>
+  <!-- @cat is from the def edit method in controller -->
+</form>
+
+
+<!-- Destroy view -->
+<form action='<%=cat_url(@cat)%>' method='POST'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <button type="submit">destroy</button>
+</form>
+
+
+
+
+<!-- Demo -->
+<!-- <%= render "sample_editor", thing1: "HELLO", thing2: "WORLD", thing3: "ANOTHER THING" %>
+<%= render "sample_editor", thing1: "A", thing2: "B", thing3: "C" %>
+<%= render "sample_editor", thing1: "D", thing2: "E", thing3: "F" %> -->

@@ -1,0 +1,18 @@
+<h1> RENT A CAT </h1>
+
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Birthdate </th>
+    <th> Color </th>
+  </tr>
+
+  <% @cats.each do |cat| %>
+    <tr>
+      <td><%= cat.name %> </td>
+      <td><%= cat.birth_date %> </td>
+      <td> <%= cat.color %> </td>
+    </tr>
+  <% end %>
+
+</table>
